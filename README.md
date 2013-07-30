@@ -11,7 +11,7 @@ Surprisingly, this does not happen by default, apparently for
 Adding to your Django Project
 =============================
 
-Requires Django 1.4 or 1.3.
+Requires Django 1.5, 1.4 or 1.3.
 
 Call `validate_on_save.validate_models_on_save('your_app_name')` from your
 app's models.py (I put this call near the end of models.py, not sure whether

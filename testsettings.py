@@ -8,3 +8,5 @@ DATABASES = {
 INSTALLED_APPS = (
     'validate_on_save',
 )
+
+SECRET_KEY = 'stub-value-for-django'

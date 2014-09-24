@@ -2,11 +2,20 @@
 # (c) 2012 Bright Interactive Limited. All rights reserved.
 # http://www.bright-interactive.com | info@bright-interactive.com
 
-from django.db import models
+from distutils.version import StrictVersion
+import django
 from django.db.models.loading import get_app, get_models
 
 
 __version__ = '1.0.0'
+
+
+def django_allows_app_config():
+    return StrictVersion(django.get_version()) >= StrictVersion('1.7')
+
+
+if django_allows_app_config():
+    default_app_config = 'validate_on_save.apps.ValidateOnSaveConfig'
 
 
 def validate_models_on_save(app_name):
@@ -27,7 +36,7 @@ def validate_model_on_save(model):
 
     model: a model class.
     """
-    models.signals.pre_save.connect(_validate, sender=model)
+    django.db.models.signals.pre_save.connect(_validate, sender=model)
 
 
 def _validate(sender, signal, instance, raw, using, **kwargs):

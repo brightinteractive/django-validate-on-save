@@ -10,3 +10,5 @@ INSTALLED_APPS = (
 )
 
 SECRET_KEY = 'stub-value-for-django'
+
+MIDDLEWARE_CLASSES = []

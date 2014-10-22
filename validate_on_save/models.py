@@ -5,6 +5,7 @@
 from django.core.exceptions import ValidationError
 from django.db import models
 import validate_on_save
+from validate_on_save import django_allows_app_config
 
 
 class PickyModel(models.Model):
@@ -19,4 +20,5 @@ class PickyModel(models.Model):
         raise ValidationError("This data isn't good enough!")
 
 
-validate_on_save.validate_models_on_save('validate_on_save')
+if not django_allows_app_config():
+    validate_on_save.validate_models_on_save('validate_on_save')

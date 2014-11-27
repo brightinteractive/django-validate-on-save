@@ -53,6 +53,11 @@ Changelog
 =========
 
 
+1.1.0
+-----
+
+* Add support for Django 1.7
+
 1.0.0
 -----
 

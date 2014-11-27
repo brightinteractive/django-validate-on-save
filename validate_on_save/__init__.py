@@ -7,7 +7,7 @@ import django
 from django.db.models.loading import get_app, get_models
 
 
-__version__ = '1.0.0'
+__version__ = '1.1.0'
 
 
 def django_allows_app_config():

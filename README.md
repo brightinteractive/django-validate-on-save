@@ -52,6 +52,10 @@ then simply run `tox`:
 Changelog
 =========
 
+1.1.3
+-----
+* No code changes - version number bump required because I uploaded a broken package of 1.1.2 to PyPI
+
 1.1.2
 -----
 * Test against Django 1.8

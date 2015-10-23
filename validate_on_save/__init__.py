@@ -5,7 +5,7 @@
 from distutils.version import StrictVersion
 import django
 
-__version__ = '1.1.2'
+__version__ = '1.1.3'
 
 
 def django_gte_17():

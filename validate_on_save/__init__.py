@@ -4,7 +4,6 @@
 
 from distutils.version import StrictVersion
 import django
-from django.db.models.loading import load_app, cache, get_models, get_app
 
 __version__ = '1.1.2'
 
@@ -36,13 +35,13 @@ def validate_models_on_save(app_name):
 
 
 def _validate_models_on_save_post_17(app_name):
-    app = get_app(app_name)
-    for model in get_models(app):
+    from django.apps import apps
+    app_config = apps.get_app_config(app_name)
+    for model in app_config.get_models():
         validate_model_on_save(model)
 
 
 def _validate_models_on_save_pre_17(app_name):
-
     """
     On Django < 1.7 we don't want all the apps to be loaded when the method is
     being called for a specific app. It causes circular dependencies when apps
@@ -57,6 +56,7 @@ def _validate_models_on_save_pre_17(app_name):
     the template loaders again in the case of djangocms causing a circular
     dependency.
     """
+    from django.db.models.loading import load_app, cache, get_models, get_app
 
     load_app(app_name)
     loaded_models = cache.app_models[app_name]

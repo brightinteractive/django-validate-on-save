@@ -55,6 +55,7 @@ Changelog
 1.1.2
 -----
 * Test against Django 1.8
+* Avoid using deprecated django.db.models.loading on Django 1.7+
 
 1.1.1
 -----

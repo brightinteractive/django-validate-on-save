@@ -6,7 +6,7 @@ from distutils.version import StrictVersion
 import django
 from django.db.models.loading import load_app, cache, get_models, get_app
 
-__version__ = '1.1.0'
+__version__ = '1.1.2'
 
 
 def django_gte_17():

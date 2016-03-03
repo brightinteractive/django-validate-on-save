@@ -52,6 +52,10 @@ then simply run `tox`:
 Changelog
 =========
 
+1.1.4
+-----
+* Initial Python 3 support. Tox passes but I think that there is still work to do e.g. adding u prefix to strings.
+
 1.1.3
 -----
 * No code changes - version number bump required because I uploaded a broken package of 1.1.2 to PyPI

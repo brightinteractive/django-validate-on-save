@@ -17,9 +17,9 @@ Call `validate_on_save.validate_models_on_save('your_app_name')` from your
 app's models.py (I put this call near the end of models.py, not sure whether
 this matters).
 
-For Django 1.7:
+For Django 1.7 or 1.8:
 
-Create an `AppConfig` (https://docs.djangoproject.com/en/1.7/ref/applications/) and call `validate_on_save.validate_models_on_save('your_app_name')` in its `ready()` method.
+Create an `AppConfig` (https://docs.djangoproject.com/en/1.8/ref/applications/) and call `validate_on_save.validate_models_on_save('your_app_name')` in its `ready()` method.
 
 Publishing releases to PyPI
 ===========================
@@ -52,6 +52,23 @@ then simply run `tox`:
 Changelog
 =========
 
+1.1.3
+-----
+* No code changes - version number bump required because I uploaded a broken package of 1.1.2 to PyPI
+
+1.1.2
+-----
+* Test against Django 1.8
+* Avoid using deprecated django.db.models.loading on Django 1.7+
+
+1.1.1
+-----
+* Don't load all the apps when setting the signals for the models to avoid a circular import
+
+1.1.0
+-----
+
+* Add support for Django 1.7
 
 1.0.0
 -----

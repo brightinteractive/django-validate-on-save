@@ -24,6 +24,17 @@ Create an `AppConfig` (https://docs.djangoproject.com/en/1.8/ref/applications/) 
 Publishing releases to PyPI
 ===========================
 
+Only Bright Interactive employees can publish a release. Ensure you have a .pypirc file in your home directory configured to publish to the bright PyPI account (real password has been redacted).
+
+```
+[pypirc]
+servers = pypi
+
+[server-login]
+username:bright
+password:******
+```
+
 To publish a new version of django-validate-on-save to PyPI, set the
 `__version__` string in `validate_on_save/__init__.py`, then run:
 

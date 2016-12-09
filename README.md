@@ -21,6 +21,10 @@ For Django 1.7 or 1.8:
 
 Create an `AppConfig` (https://docs.djangoproject.com/en/1.8/ref/applications/) and call `validate_on_save.validate_models_on_save('your_app_name')` in its `ready()` method.
 
+You need to configure the app to use the new, app-specific `AppConfig` by editing its' `__init__.py` file, and adding the following:
+
+`default_app_config = 'package.leading.to.NameOfNewAppConfig'`
+
 Publishing releases to PyPI
 ===========================
 
